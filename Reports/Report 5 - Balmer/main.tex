@@ -1,0 +1,569 @@
+\documentclass[12pt,a4paper]{article}
+
+%------------------------------------------------
+% Packages
+%------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber,style=numeric]{biblatex}
+
+\addbibresource{references.bib}
+
+%------------------------------------------------
+% Page layout
+%------------------------------------------------
+\geometry{
+    top=1in,
+    bottom=1.2in,
+    left=1in,
+    right=1in
+}
+
+\setlength{\headheight}{15pt}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Ian Cullinane}
+\fancyhead[R]{Balmer Series}
+\fancyfoot[C]{\thepage}
+
+\sisetup{
+    inter-unit-product = \cdot,
+    uncertainty-mode = separate,
+    per-mode = symbol
+}
+
+%------------------------------------------------
+% Title
+%------------------------------------------------
+\title{
+    \Large\textbf{Investigation of the Balmer Series}\\[0.5em]
+    \large PY2107 -- Experiment 7
+}
+
+\author{
+    Ian Cullinane -- \textit{125413342}\\[0.5em]
+    Lab Partner: Fionn Lichtsinn Doyle\\[0.5em]
+    Demonstrators: Jonathan and Olivia
+}
+
+\date{14th October 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\tableofcontents
+\newpage
+
+%================================================
+\section{Abstract}
+%================================================
+
+The visible Balmer spectrum of hydrogen was measured with a
+diffraction grating. The diffraction angles for three spectral
+lines were recorded in orders one to three where visible, and
+the wavelengths were calculated from the grating equation.
+The wavelengths were then related to the initial quantum number
+using the Rydberg formula.
+
+An unweighted linear fit gave an experimental hydrogen Rydberg
+constant of
+$R_H=(1.022\pm0.066)\times10^7\ \si{\per\metre}$, where the
+quoted uncertainty is the standard error from the fit. This is
+6.85\% below the accepted value,
+$1.09737\times10^7\ \si{\per\metre}$. The fit implies a Balmer
+series-limit wavelength of $391\pm25\ \si{\nano\metre}$ and a
+limit energy of $3.17\pm0.21\ \si{\electronvolt}$; these are
+consistent with the theoretical values of approximately
+\SI{364.5}{\nano\metre} and \SI{3.40}{\electronvolt} within the
+fit uncertainty. The weighted fit has a reduced chi-squared of
+17.91, showing that the measurement uncertainties do not account
+for all of the scatter. The results support the Balmer-series
+model, but the wavelength and Rydberg estimates remain limited by
+measurement scatter and systematic uncertainty.
+
+\newpage
+
+%================================================
+\section{Theory}
+%================================================
+
+
+The Balmer series of hydrogen arises when electrons transition
+from higher energy levels to the final level $n_f=2$, emitting
+photons in the visible region of the electromagnetic spectrum.
+The wavelength of the emitted radiation is described by the
+Rydberg equation:
+
+\[
+\frac{1}{\lambda}
+= R_H \left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right),
+\]
+
+where $\lambda$ is the wavelength of the emitted photon,
+$n_i$ and $n_f$ are the initial and final principal quantum
+numbers, respectively, and $R_H$ is the Rydberg constant
+for hydrogen.
+
+The theoretical hydrogen Rydberg constant accounts for the
+finite mass of the nucleus through the reduced mass:
+
+\[
+R_H = \frac{m_r}{m_e}R_\infty,
+\qquad
+m_r = \frac{m_e m_p}{m_e+m_p},
+\]
+
+where $m_e$ and $m_p$ are the electron and proton masses,
+and $R_\infty$ is the Rydberg constant for an infinitely
+heavy nucleus.
+
+A diffraction grating is used to determine the wavelength
+of each spectral line. The grating equation is
+
+\[
+d\sin\theta = \eta\lambda,
+\]
+
+where $d$ is the grating spacing, $\theta$ is the diffraction
+angle, and $\eta$ is the diffraction order. Thus, the wavelength
+can be calculated using
+
+\[
+\lambda = \frac{d\sin\theta}{\eta}.
+\]
+
+For a grating with $N$ lines per unit length, the spacing is
+$d=1/N$.
+
+For the linear fit, define
+
+\[
+x = \frac{1}{n_f^2}-\frac{1}{n_i^2}.
+\]
+
+The Rydberg equation then becomes
+
+\[
+\frac{1}{\lambda}=R_Hx.
+\]
+
+A plot of $1/\lambda$ against $x$ should therefore produce a
+straight line with gradient $R_H$ and an ideal vertical
+intercept of zero. Equivalently, plotting against $1/n_i^2$
+gives a gradient of $-R_H$ and an intercept of $R_H/n_f^2$.
+The analysis plot uses the first form, so its fitted gradient
+is the experimental Rydberg constant.
+
+The Balmer series limit corresponds to $n_i\rightarrow\infty$.
+Its wavelength and transition energy are given by
+
+\[
+\lambda_{\text{limit}} = \frac{n_f^2}{R_H}
+= \frac{4}{R_H},
+\]
+
+\[
+E = \frac{hc}{\lambda_{\text{limit}}},
+\]
+
+where $h$ is Planck's constant and $c$ is the speed of light.
+
+\newpage
+
+%================================================
+\section{Experimental Procedure}
+%================================================
+
+
+The spectrometer eyepiece was adjusted until the crosshairs
+were sharply focused. The telescope was then focused on a
+distant object until there was no parallax between the image
+and the crosshairs. The telescope focus was left unchanged
+for the remainder of the experiment.
+
+The hydrogen discharge lamp was used to illuminate the
+collimator slit. The collimator lens was adjusted until the
+slit image was sharply focused without parallax. The slit
+width was reduced to produce a narrow, clearly defined image
+parallel to the vertical crosshair.
+
+The diffraction grating was placed on the spectrometer table,
+which was levelled if necessary. The straight-through position
+of the telescope was recorded. The telescope was then rotated
+to observe spectral lines on both sides of the central image.
+The grating orientation was adjusted until the angular
+displacements on the left and right sides were approximately
+equal.
+
+The angular positions of the visible Balmer spectral lines
+were measured on both sides of the straight-through position
+for as many observable diffraction orders as possible. The
+main and vernier scales were used to obtain angular readings.
+An angular reading uncertainty of 2 arcminutes was adopted
+for the subsequent uncertainty propagation.
+
+The diffraction angles were determined from the measured
+angular positions, and the wavelength of each spectral line
+was calculated using the grating equation,
+
+\[
+\lambda = \frac{d\sin\theta}{\eta},
+\]
+
+where $d$ is the grating spacing, $\theta$ is the diffraction
+angle, and $\eta$ is the diffraction order.
+
+The visible spectral lines were identified with transitions
+from $n_i=3,4,$ and $5$ to $n_f=2$. No usable measurement for
+$n_i=6$ was included in the analysed data.
+
+A graph of $1/\lambda$ against
+$1/n_f^2-1/n_i^2$ was plotted. The gradient was used to
+determine the experimental Rydberg constant, which was
+compared with the theoretical value. Finally, the wavelength
+of the Balmer series limit and its corresponding transition
+energy were calculated using the experimental Rydberg constant.
+The hydrogen lamp was switched off after the measurements
+were completed. The procedure follows the laboratory
+instructions for this experiment.\cite{py2107}
+
+\newpage
+
+%================================================
+\section{Analysis}
+%================================================
+
+The grating used had $600$ lines per millimetre, giving
+$d=1.667\times10^{-6}\ \si{\metre}$. The 14 usable
+measurements comprise five observations of the $n_i=3$ line,
+four of $n_i=4$, and five of $n_i=5$. Wavelengths were
+recalculated from the recorded diffraction angles and orders.
+For each line, the mean wavelength and its uncertainty
+(standard error combined in quadrature with the assumed
+1\% grating-spacing uncertainty) are shown in
+Table~\ref{tab:line-wavelengths}.
+
+\begin{table}[H]
+    \centering
+    \caption{Measured Balmer-line wavelengths and comparison
+    with the theoretical values calculated using
+    $R_H=1.0973731568\times10^7\ \si{\per\metre}$.}
+    \label{tab:line-wavelengths}
+    \begin{tabular}{ccccc}
+        \toprule
+        $n_i\to2$ & Count & Measured $\lambda$ (nm) &
+        Theoretical $\lambda$ (nm) & Difference ($\sigma$) \\
+        \midrule
+        $3\to2$ & 5 & $669.79\pm17.75$ & 656.11 & 0.77 \\
+        $4\to2$ & 4 & $515.32\pm11.33$ & 486.01 & 2.59 \\
+        $5\to2$ & 5 & $447.56\pm6.83$ & 433.94 & 1.99 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+The fit variable was defined as
+$x=1/n_f^2-1/n_i^2$, and the measured inverse wavelengths
+were fitted to $y=mx+c$, where $y=1/\lambda$. The
+unweighted least-squares fit gave
+
+\[
+m=(1.0222\pm0.0664)\times10^7\ \si{\per\metre},
+\qquad
+c=(6.67\pm12.01)\times10^4\ \si{\per\metre}.
+\]
+
+The slope is the experimental Rydberg constant. Its
+magnitude is 6.85\% below the accepted value
+$1.097373\times10^7\ \si{\per\metre}$. The fitted intercept
+is consistent with the ideal value of zero within its
+standard error. The fit and its extrapolation to the series
+limit are shown in Figure~\ref{fig:balmer-fit}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\textwidth]{images/balmer_fit_band.png}
+    \caption{Inverse wavelength against
+    $1/n_f^2-1/n_i^2$, with the unweighted linear fit and
+    95\% confidence and prediction bands. The series limit
+    occurs at $x=1/n_f^2=0.25$.}
+    \label{fig:balmer-fit}
+\end{figure}
+
+For $n_i\rightarrow\infty$, $1/\lambda_{\mathrm{limit}}=R_H/4$.
+Using the fitted slope gives
+
+\[
+\lambda_{\mathrm{limit}}=391.3\pm25.4\ \si{\nano\metre},
+\qquad
+E_{\mathrm{limit}}=3.168\pm0.206\ \si{\electronvolt}.
+\]
+
+The theoretical values calculated from the accepted Rydberg
+constant are approximately \SI{364.5}{\nano\metre} and
+\SI{3.400}{\electronvolt}, respectively. These limit
+uncertainties are propagated from the unweighted fit and do
+not include the full systematic uncertainty.
+
+The other plots provide checks on the line identification,
+individual wavelength measurements, and regression
+behaviour. The measured and theoretical wavelengths are
+compared in Figure~\ref{fig:measured-theory}; the measured
+spectrum and order-by-order wavelengths are shown in
+Figures~\ref{fig:spectrum} and~\ref{fig:order-wavelength}.
+Figure~\ref{fig:fit-comparison} compares the unweighted,
+weighted, through-origin, and theoretical fits.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\textwidth]{images/measured_vs_theory.png}
+    \caption{Measured wavelengths plotted against theoretical
+    Balmer wavelengths. Error bars include the propagated
+    angle uncertainty and the assumed grating-spacing
+    uncertainty.}
+    \label{fig:measured-theory}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.82\textwidth]{images/spectrum.png}
+    \caption{Measured Balmer-line positions compared with
+    their theoretical wavelengths.}
+    \label{fig:spectrum}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.82\textwidth]{images/lambda_by_order.png}
+    \caption{Wavelength estimates for each transition and
+    diffraction order. Dotted lines indicate the theoretical
+    wavelengths.}
+    \label{fig:order-wavelength}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \caption{Rydberg-constant estimates from alternative
+    regressions. The weighted-fit uncertainty is formal; its
+    goodness of fit indicates it is not an adequate
+    description of the observed scatter.}
+    \label{tab:fit-comparison}
+    \begin{tabular}{lcc}
+        \toprule
+        Fit & $R_H$ ($10^7\ \si{\per\metre}$) &
+        Reduced $\chi^2$ \\
+        \midrule
+        Unweighted, free intercept & $1.0222\pm0.0664$ & -- \\
+        Weighted, free intercept & $1.0147\pm0.0160$ & 17.91 \\
+        Weighted, forced through origin & $1.0578\pm0.0029$ & -- \\
+        Accepted theoretical value & 1.09737 & -- \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.82\textwidth]{images/fit_comparison.png}
+    \caption{Comparison of regression models with the
+    theoretical Rydberg slope. The free-intercept weighted
+    fit has a reduced $\chi^2$ of 17.91.}
+    \label{fig:fit-comparison}
+\end{figure}
+
+\newpage
+
+%================================================
+\section{Error Analysis}
+%================================================
+
+The wavelength uncertainty was estimated by propagating an
+assumed angular reading uncertainty of
+$u_\theta=2$ arcminutes and a 1\% relative uncertainty in
+the grating spacing. For
+$\lambda=d\sin\theta/\eta$, the independent contributions
+were combined as
+
+\[
+u_\lambda =
+\sqrt{
+\left(\frac{d\cos\theta}{\eta}u_\theta\right)^2
++\left(0.01\lambda\right)^2
+},
+\qquad
+u_{1/\lambda}=\frac{u_\lambda}{\lambda^2}.
+\]
+
+The fit uncertainty from the unweighted regression is
+$6.64\times10^5\ \si{\per\metre}$, much larger than the
+angle-only contribution to the Rydberg uncertainty,
+$1.17\times10^4\ \si{\per\metre}$. The assumed 1\% grating
+spacing uncertainty contributes approximately
+$1.01\times10^5\ \si{\per\metre}$. Thus, scatter in the
+observations dominates the stated fit uncertainty, although
+the grating calibration is a common systematic contribution
+that does not average away over repeated measurements.
+
+The weighted regression gives
+$\chi^2=214.95$ for 12 degrees of freedom, corresponding
+to a reduced $\chi^2=17.91$ and a probability below 0.001
+under the assumed uncertainty model. The weighted-fit error
+bars therefore substantially underestimate the dispersion
+of the measurements, or the data contain additional
+unmodelled effects. Consequently, the small formal weighted
+uncertainty should not be interpreted as the accuracy of the
+measurement. The residual diagnostics in
+Figure~\ref{fig:residuals} show the deviations from the
+unweighted fit.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/residual_diagnostics.png}
+    \caption{Unweighted-fit residuals, their distribution,
+    and a normal-probability plot. The residual scale is
+    larger than expected from the propagated measurement
+    uncertainties.}
+    \label{fig:residuals}
+\end{figure}
+
+\newpage
+
+%================================================
+\section{Discussion}
+
+The observed wavelengths increase with decreasing
+$n_i$, as expected for the Balmer series, and the fitted
+gradient gives a Rydberg constant within approximately
+1.1 unweighted-fit standard errors of the accepted value.
+The fitted intercept is also consistent with zero. Together,
+these results support the predicted linear relationship
+between inverse wavelength and
+$1/n_f^2-1/n_i^2$.
+
+Each measured mean wavelength is longer than its theoretical
+counterpart. The $n_i=3$ result agrees within one combined
+standard uncertainty, while the $n_i=4$ result differs by
+about 2.6 standard uncertainties and the $n_i=5$ result by
+about 2.0. The consistent direction of the offsets suggests
+that a common calibration or alignment effect may be present,
+in addition to random uncertainty. Possible contributions
+include uncertainty in locating the centre of a spectral
+line, residual error in the straight-through reference,
+grating alignment, and the assumed tolerance of the grating
+spacing.
+
+The weighted regression's large reduced chi-squared is
+particularly important: the data are not described by the
+stated independent-error model. This explains why forcing
+the fit through the theoretically expected zero intercept
+produces an apparently very precise result despite the
+scatter. The unweighted fit, which reflects the observed
+dispersion more directly, is therefore used for the reported
+experimental value. The fit comparison and residual plots
+make this limitation visible.
+
+The series limit is an extrapolation from the three observed
+lines to $n_i\rightarrow\infty$. Its uncertainty is
+therefore relatively large, and the reported propagated
+uncertainty does not fully represent the systematic and
+model uncertainty. The $n_i=6$ transition was not included,
+so an additional violet line could not provide another
+independent point to constrain the fit. Future measurements
+could improve the result by repeating both-side angle
+readings, checking the angular zero and grating calibration,
+and including additional visible orders and spectral lines.
+
+\newpage
+
+%================================================
+\section{Conclusion}
+%================================================
+
+The Balmer spectrum was measured for transitions
+$n_i=3,4,$ and $5$ to $n_f=2$. An unweighted fit to the
+inverse wavelengths gave
+$R_H=(1.022\pm0.066)\times10^7\ \si{\per\metre}$, which is
+6.85\% below the accepted value. The data also gave a
+series-limit wavelength of $391\pm25\ \si{\nano\metre}$.
+While the fitted slope and intercept are broadly consistent
+with the Rydberg model, the weighted residual test shows
+that the propagated measurement uncertainties do not
+account for all of the scatter. The result is therefore
+consistent with the expected Balmer-series behaviour but
+limited in precision by measurement scatter and systematic
+effects.
+
+\newpage
+
+%================================================
+\section{References}
+%================================================
+\printbibliography
+%================================================
+
+\newpage
+
+%================================================
+\appendix
+
+\section{Appendix}
+\subsection{Data}
+\begin{table}[!ht]
+    \centering
+    \caption{Recorded diffraction measurements and calculated
+    wavelengths. The wavelength column is in metres.}
+    \label{tab:raw-data}
+    \begin{tabular}{ccccc}
+        \toprule
+        $n_i$ & $\eta$ & $\theta$ (rad) & $\sin\theta$ &
+        $\lambda$ (m) \\
+        \midrule
+        5 & 1 & 0.273027673 & 0.270 & $4.49\times10^{-7}$ \\
+        5 & 2 & 0.578848143 & 0.547 & $4.56\times10^{-7}$ \\
+        5 & 1 & 0.275781414 & 0.272 & $4.54\times10^{-7}$ \\
+        5 & 2 & 0.572293462 & 0.542 & $4.51\times10^{-7}$ \\
+        5 & 3 & 0.877726081 & 0.769 & $4.27\times10^{-7}$ \\
+        4 & 1 & 0.306091966 & 0.301 & $5.02\times10^{-7}$ \\
+        4 & 2 & 0.674065550 & 0.624 & $5.20\times10^{-7}$ \\
+        4 & 1 & 0.331050174 & 0.325 & $5.42\times10^{-7}$ \\
+        4 & 2 & 0.639294712 & 0.597 & $4.97\times10^{-7}$ \\
+        3 & 1 & 0.420314069 & 0.408 & $6.80\times10^{-7}$ \\
+        3 & 2 & 0.901191063 & 0.784 & $6.53\times10^{-7}$ \\
+        3 & 1 & 0.432279271 & 0.419 & $6.98\times10^{-7}$ \\
+        3 & 2 & 0.828469011 & 0.737 & $6.14\times10^{-7}$ \\
+        3 & 2 & 1.004320629 & 0.844 & $7.03\times10^{-7}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Hydrogen $E_n$ from Schr\"odinger Equation}
+
+The time-independent Schr\"odinger equation for the hydrogen atom is
+\begin{equation}
+    \hat{H}\psi = E\psi,
+\end{equation}
+where $\hat{H}$ is the Hamiltonian operator, $\psi$ is the wavefunction,
+and $E$ is the energy eigenvalue. Solving this equation gives the
+quantized energy levels of the hydrogen atom as
+\begin{equation}
+    E_n = -\frac{13.6\ \si{\electronvolt}}{n^2}, \quad n=1,2,3,\dots
+\end{equation}
+
+
+\end{document}

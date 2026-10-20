@@ -1,0 +1,33 @@
+\contentsline {section}{\numberline {1}Abstract}{4}{section.1}%
+\contentsline {section}{\numberline {2}Theory}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Einstein's Photoelectric Equation}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Stopping Potential}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Wavelength Calibration Using a Diffraction Grating}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Effect of Light Intensity}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Photocurrent--Voltage Characteristic}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Determination of Uncertainties}{8}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Experimental Procedure}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Wavelength Calibration of the LEDs}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Measurement of the Stopping Potential}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Investigation of Light Intensity}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Photocurrent--Voltage Measurement}{11}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Analysis}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Wavelength Calibration}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Determination of Planck's Constant and the Work Function}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Effect of Light Intensity on the Stopping Potential}{14}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Photocurrent--Voltage Fit}{15}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Error Analysis}{17}{section.5}%
+\contentsline {section}{\numberline {6}Discussion}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Planck's Constant and the Work Function}{19}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Intensity Dependence of the Stopping Potential}{19}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Why the apparent stopping potential rises at low intensity}{20}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}Photocurrent--Voltage Characteristic}{20}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Origin of the sigmoid shape}{21}{subsubsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.4}Limitations}{21}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Conclusion}{23}{section.7}%
+\contentsline {section}{\numberline {8}References}{24}{section.8}%
+\contentsline {section}{\numberline {A}Appendix}{25}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Diffraction Data}{25}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Stopping Voltage Data}{25}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Intensity Data}{26}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}Voltage and Current Data}{27}{subsection.A.4}%

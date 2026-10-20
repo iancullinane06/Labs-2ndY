@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}Abstract}{4}{section.1}%
+\contentsline {section}{\numberline {2}Theory}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Formation of Newton's Rings}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Geometrical Relationship}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Condition for Dark Fringes}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Determination of the Wavelength}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Determination of the Refractive Index of Water}{7}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Experimental Procedure}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Apparatus}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Observation of the Rings}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Calibration and Measurement in Air}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Measurement with Water}{11}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Radius of Curvature}{11}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Results}{13}{section.4}%
+\contentsline {section}{\numberline {5}Analysis}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Linear Regression}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Refractive Index of Water}{18}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Uncertainty Analysis}{19}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Uncertainty in the Wavelength}{19}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Uncertainty in the Refractive Index}{20}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Discussion}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Wavelength}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Refractive Index}{21}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Residuals}{21}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Sources of Experimental Error}{21}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Improvements}{22}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Conclusion}{23}{section.8}%
+\contentsline {section}{\numberline {9}References}{23}{section.9}%
+\contentsline {section}{\numberline {A}Derivation of the Newton's Rings Equations}{24}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Geometrical Relationship}{24}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Dark-Ring Radius}{24}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Water Film}{25}{subsection.A.3}%

@@ -1,0 +1,113 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{daimon2007}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d9e7004b2f7b65b287960bc527621de5}{%
+           family={Daimon},
+           familyi={D\bibinitperiod},
+           given={Masahiko},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c404a731941da7174a7e0217d6104689}{%
+           family={Masumura},
+           familyi={M\bibinitperiod},
+           given={Akira},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ccfbe649fed9fa01000ef1ca85b2498}
+      \strng{fullhash}{7ccfbe649fed9fa01000ef1ca85b2498}
+      \strng{fullhashraw}{7ccfbe649fed9fa01000ef1ca85b2498}
+      \strng{bibnamehash}{7ccfbe649fed9fa01000ef1ca85b2498}
+      \strng{authorbibnamehash}{7ccfbe649fed9fa01000ef1ca85b2498}
+      \strng{authornamehash}{7ccfbe649fed9fa01000ef1ca85b2498}
+      \strng{authorfullhash}{7ccfbe649fed9fa01000ef1ca85b2498}
+      \strng{authorfullhashraw}{7ccfbe649fed9fa01000ef1ca85b2498}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Optics}
+      \field{number}{18}
+      \field{title}{Measurement of the refractive index of distilled water from the near-infrared region to the ultraviolet region}
+      \field{volume}{46}
+      \field{year}{2007}
+      \field{pages}{3811\bibrangedash 3820}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1364/AO.46.003811
+      \endverb
+    \endentry
+    \entry{hecht}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=9a6efa2d012e3aaa08e4b6a8cf6a8b4c}{%
+           family={Hecht},
+           familyi={H\bibinitperiod},
+           given={Eugene},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{9a6efa2d012e3aaa08e4b6a8cf6a8b4c}
+      \strng{fullhash}{9a6efa2d012e3aaa08e4b6a8cf6a8b4c}
+      \strng{fullhashraw}{9a6efa2d012e3aaa08e4b6a8cf6a8b4c}
+      \strng{bibnamehash}{9a6efa2d012e3aaa08e4b6a8cf6a8b4c}
+      \strng{authorbibnamehash}{9a6efa2d012e3aaa08e4b6a8cf6a8b4c}
+      \strng{authornamehash}{9a6efa2d012e3aaa08e4b6a8cf6a8b4c}
+      \strng{authorfullhash}{9a6efa2d012e3aaa08e4b6a8cf6a8b4c}
+      \strng{authorfullhashraw}{9a6efa2d012e3aaa08e4b6a8cf6a8b4c}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{title}{Optics}
+      \field{year}{2017}
+    \endentry
+    \entry{py2107}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=815f4be59647ecdbda28ee9cf87d89fe}{%
+           family={{Physics Department}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {University Laboratory}%
+      }
+      \strng{namehash}{815f4be59647ecdbda28ee9cf87d89fe}
+      \strng{fullhash}{815f4be59647ecdbda28ee9cf87d89fe}
+      \strng{fullhashraw}{815f4be59647ecdbda28ee9cf87d89fe}
+      \strng{bibnamehash}{815f4be59647ecdbda28ee9cf87d89fe}
+      \strng{authorbibnamehash}{815f4be59647ecdbda28ee9cf87d89fe}
+      \strng{authornamehash}{815f4be59647ecdbda28ee9cf87d89fe}
+      \strng{authorfullhash}{815f4be59647ecdbda28ee9cf87d89fe}
+      \strng{authorfullhashraw}{815f4be59647ecdbda28ee9cf87d89fe}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Laboratory handout, pp. 2.1--2.6}
+      \field{title}{PY2107 Newton's Rings: Experiment 5}
+      \field{year}{2026}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
