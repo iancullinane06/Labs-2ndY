@@ -208,7 +208,7 @@ GRATING_LINES = 600 * 1000  # lines per metre
 GRATING_WIDTH = 0.02  # assumed illuminated grating width (m)
 M_E_OVER_M_P = 1 / 1836.15267343
 THEORY_NM = {n: 1e9 / (RYDBERG_THEORY * (0.25 - 1 / n**2)) for n in (3, 4, 5)}
-LINE_COLOURS = {3: "#FF5335", 4: "#2FC0B8", 5: "#335BFF"}
+LINE_COLOURS = {3: "#FF5335", 4: "#2FC0B8", 5: "#5C33FF"}
 
 
 def _wls(x, y, u_y):

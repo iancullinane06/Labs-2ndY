@@ -3,7 +3,6 @@ from matplotlib import pyplot as plt
 from matplotlib import font_manager
 
 sns.set_theme(style="darkgrid", rc={"axes.facecolor": ".9"})
-sns.set(font="Verdana")
 
 def _style_axis(ax, title, xlabel, ylabel):
     ax.set(
