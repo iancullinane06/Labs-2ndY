@@ -4,7 +4,8 @@ import pandas as pd
 import seaborn as sns
 from scipy import stats
 from sklearn.cluster import KMeans
-import Styling
+import tools.Styling as Styling
+import tools.Symbols as Symbols
 
 wavelength_cmap = sns.color_palette("rainbow", as_cmap=True)
 figure_size = (8, 8)
@@ -201,13 +202,13 @@ def analyse_balmer(data):
     summary.to_csv("Code/Data/balmer_line_wavelengths.csv")
 
 
-U_THETA_DEG = 2 / 60  # assumed angle reading uncertainty: 2 arcmin
+U_THETA_DEG = 5 / 60  # assumed angle reading uncertainty: 2 arcmin
 D_REL_UNCERTAINTY = 0.01  # assumed 1% tolerance on the 600 lines/mm grating
 GRATING_LINES = 600 * 1000  # lines per metre
 GRATING_WIDTH = 0.02  # assumed illuminated grating width (m)
 M_E_OVER_M_P = 1 / 1836.15267343
 THEORY_NM = {n: 1e9 / (RYDBERG_THEORY * (0.25 - 1 / n**2)) for n in (3, 4, 5)}
-LINE_COLOURS = {3: "red", 4: "cyan", 5: "blue"}
+LINE_COLOURS = {3: "#FF5335", 4: "#2FC0B8", 5: "#335BFF"}
 
 
 def _wls(x, y, u_y):
@@ -382,9 +383,9 @@ def plot_extended(data):
     axes[0].axhline(0, color="red", ls="--")
     axes[0].axhspan(-s, s, alpha=0.15, label="±1σ")
     axes[0].legend()
-    Styling._style_axis(axes[0], "Residuals", "1/n_f^2-1/n_i^2", "y - fit (m⁻¹)")
+    Styling._style_axis(axes[0], "Residuals", "1/n_f^2-1/n_i^2", f"y - fit (m{Symbols.symbols['superscript_minus'].encode('utf-8').decode('utf-8')}{Symbols.symbols['superscript_one_1'].encode('utf-8').decode('utf-8')} )")
     axes[1].hist(res_ols, bins=6, edgecolor="black")
-    Styling._style_axis(axes[1], "Residual histogram", "Residual (m⁻¹)", "Count")
+    Styling._style_axis(axes[1], "Residual histogram", f"Residual (m{Symbols.symbols['superscript_minus'].encode('utf-8').decode('utf-8')}{Symbols.symbols['superscript_one_1'].encode('utf-8').decode('utf-8')} )", "Count")
     stats.probplot(res_ols, dist="norm", plot=axes[2])
     Styling._style_axis(axes[2], "Q-Q plot", "Theoretical quantiles", "Ordered residuals")
     Styling._finish_plot(fig, "residual_diagnostics.png", save_directory)
@@ -429,12 +430,17 @@ def plot_extended(data):
 
 if __name__ == "__main__":
     choice = input(
-        "Do you want to (p)lot, (a)nalyse or (e)xtended-analyse the Balmer data? "
-    ).strip().lower()
+        "Do you want to (p)lot, (a)nalyse or (e)xtended-analyse the Balmer data or (A)ll? "
+    ).strip()
     if choice == "p":
         plot_lambda(data_balmer)
         plot_balmer(data_balmer)
     elif choice == "a":
         analyse_balmer(data_balmer)
     elif choice == "e":
+        plot_extended(data_balmer)
+    elif choice == "A":
+        plot_lambda(data_balmer)
+        plot_balmer(data_balmer)
+        analyse_balmer(data_balmer)
         plot_extended(data_balmer)

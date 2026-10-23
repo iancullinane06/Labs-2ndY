@@ -3,7 +3,7 @@ import pandas as pd
 from scipy.optimize import curve_fit
 import seaborn as sns
 import numpy as np
-import Styling
+import Code.tools.Styling as Styling
 
 wavelength_cmap = sns.color_palette("crest", as_cmap=True)
 wavelength_cmap = wavelength_cmap.reversed()
