@@ -19,7 +19,7 @@ symbols = MappingProxyType(
         "set_minus": "∖",
         "set_cartesian_product": "×",
         "set_difference": "\\",
-        "set_symmetric_difference": "Δ",
+        "delta": "Δ",
         "set_cardinality": "|",
         "set_complement": "'",
         "set_power_set": "ℙ",
@@ -36,7 +36,7 @@ symbols = MappingProxyType(
         "superscript_minus": "⁻",
         "superscript_zero_0": "⁰",
         "superscript_one_1": "¹",
-        "superscript_two_2": "²",
+        "squared": "²",
         "superscript_three_3": "³",
         "superscript_four_4": "⁴",
         "superscript_five_5": "⁵",
@@ -73,9 +73,9 @@ symbols = MappingProxyType(
         "fraction_seven_eighths_7_8": "⅞",
         "fraction_one_ninth_1_9": "⅑",
         "fraction_one_tenth_1_10": "⅒",
-        "degree_angle": "°",
-        "degree_celsius": "℃",
-        "degree_fahrenheit": "℉",
+        "degree": "°",
+        "degree_celsius": "°C",
+        "degree_fahrenheit": "°F",
         "diameter": "⌀",
         "multiplication": "✕",
         "division": "÷",
@@ -93,7 +93,7 @@ symbols = MappingProxyType(
         "top_half_integral": "⌠",
         "bottom_half_integral": "⌡",
         "not_sign": "¬",
-        "plus_minus_sign": "±",
+        "+/-": "±",
         "square_root": "√",
         "cube_root": "∛",
         "fourth_root": "∜",
@@ -113,7 +113,7 @@ symbols = MappingProxyType(
 )
 
 
-def search(namelike: str) -> Dict:
+def search(namelike: str) -> MappingProxyType:
 
     """
     Return a dictionary of symbols with names
@@ -122,10 +122,10 @@ def search(namelike: str) -> Dict:
 
     filtered = {k: v for k, v in symbols.items() if namelike in k}
 
-    return filtered
+    return MappingProxyType(filtered)
 
 
-def print_symbols(symbols_to_print:Dict = symbols) -> None:
+def print_symbols(symbols_to_print:MappingProxyType = symbols) -> None:
 
     """
     Prints symbols in the symbols argument,

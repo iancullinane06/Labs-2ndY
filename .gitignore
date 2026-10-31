@@ -1,5 +1,7 @@
 /.venv
+*.pyc
+*/__pycache__/
 
-/main.*
+main.*
 !/main.pdf
 !/main.tex
