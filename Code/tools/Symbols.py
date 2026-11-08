@@ -109,6 +109,7 @@ symbols = MappingProxyType(
         "right_angle_with_arc": "⊾",
         "right_triangle": "⊿",
         "dot_operator": "⋅",
+        "sigma": "σ"
     }
 )
 
