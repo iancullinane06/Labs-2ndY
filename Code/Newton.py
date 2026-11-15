@@ -3,8 +3,8 @@ import pandas as pd
 from scipy.stats import linregress
 import seaborn as sns
 import numpy as np
-import tools.Styling as Styling
-from tools.Symbols import symbols
+from labplotlib.symbols import symbols
+from labplotlib import styling 
 
 # Measured quantities and their uncertainties (SI units)
 calorimeter_mass = 0.003489
@@ -83,7 +83,7 @@ def analyse_cooling(data):
     cooling_coefficient = -fit.slope
     cooling_coefficient_uncertainty = fit.stderr
     print(
-        f"k = {cooling_coefficient:.3e} +/- {cooling_coefficient_uncertainty:.1e} s^-1 "
+        f"k = {cooling_coefficient:.3e} {symbols['pm']} {cooling_coefficient_uncertainty:.1e} s^-1 "
         f"(log-linear fit, R^2 = {fit.rvalue**2:.4f}, n = {len(time_seconds)})"
     )
     
@@ -98,7 +98,7 @@ def analyse_cooling(data):
         + (heat_capacity_uncertainty / heat_capacity) ** 2
         + (RMSE / np.mean(delta_t))**2
     )
-    print(f"Boundary-layer thickness = {b:.3e} {symbols['+/-']} {b_uncertainty:.1e} m")
+    print(f"Boundary-layer thickness = {b:.3e} {symbols['pm']} {b_uncertainty:.1e} m")
     
     return cooling_coefficient, cooling_coefficient_uncertainty
 
@@ -160,30 +160,30 @@ def plot_heating(data):
     fig, ax = plt.subplots(figsize=figure_size)
     sns.lineplot(x="Heating Time", y="Heating Temp", data=data, label="Heating Temp")
     sns.lineplot(x="Heating Time", y="Heating Temp bg", data=data, label="Heating Temp bg")
-    Styling._style_axis(ax, "Heating Curve", "Time (min)", f"Temperature ({symbols['degree_celsius']})")
-    Styling._finish_plot(fig, "Heating Curve", report_images_dir)
+    styling._style_axis(ax, "Heating Curve", "Time (min)", f"Temperature ({symbols['degree_celsius']})")
+    styling._finish_plot(fig, "Heating Curve", report_images_dir)
 
 def plot_cooling(data):
     fig, ax = plt.subplots(figsize=figure_size)
     sns.lineplot(x="Cooling Time", y="Cooling Temp bg", data=data, label="Calorimeter Temp")
     sns.lineplot(x="Cooling Time", y="Cooling Temp", data=data, label="Ambient Temp")
-    Styling._style_axis(ax, "Cooling Curve", "Time (min)", f"Temperature ({symbols['degree_celsius']})")
-    Styling._finish_plot(fig, "Cooling Curve", report_images_dir)
+    styling._style_axis(ax, "Cooling Curve", "Time (min)", f"Temperature ({symbols['degree_celsius']})")
+    styling._finish_plot(fig, "Cooling Curve", report_images_dir)
 
 def plot_delta_T_Heating(data):
     fig, ax = plt.subplots(figsize=figure_size)
     delta_T_heating = (data["Heating Temp"] - data["Heating Temp bg"])*-1
     sns.lineplot(x="Heating Time", y=delta_T_heating, data=data, label=f"{symbols['delta']}T Heating")
-    Styling._style_axis(ax, "Temperature Difference Curve Heating", "Time (min)", f"{symbols['delta']}T ({symbols['degree_celsius']})")
-    Styling._finish_plot(fig, "Temperature Difference Curve Heating", report_images_dir)
+    styling._style_axis(ax, "Temperature Difference Curve Heating", "Time (min)", f"{symbols['delta']}T ({symbols['degree_celsius']})")
+    styling._finish_plot(fig, "Temperature Difference Curve Heating", report_images_dir)
 
 def plot_delta_T_Cooling(data):
     fig, ax = plt.subplots(figsize=figure_size)
     delta_T_cooling = data["Cooling Temp bg"] - data["Cooling Temp"]
     sns.lineplot(x="Cooling Time", y=delta_T_cooling, data=data, label=f"{symbols['delta']}T Cooling")
-    Styling._style_axis(ax, "Temperature Difference Curve Cooling", "Time (min)", f"{symbols['delta']}T ({symbols['degree_celsius']})")
+    styling._style_axis(ax, "Temperature Difference Curve Cooling", "Time (min)", f"{symbols['delta']}T ({symbols['degree_celsius']})")
     ax.set_yscale("log")
-    Styling._finish_plot(fig, "Temperature Difference Curve Cooling", report_images_dir)
+    styling._finish_plot(fig, "Temperature Difference Curve Cooling", report_images_dir)
 
 def plot_cooling_log_fit(data):
     time_seconds, log_excess, fit = _cooling_fit(data)
@@ -208,13 +208,13 @@ def plot_cooling_log_fit(data):
     ax_res.scatter(time_seconds, residuals, s=18)
     ax_res.axhline(0, color="tab:orange", linestyle="--", label="Zero residual")
     ax_res.legend()
-    Styling._style_axis(
+    styling._style_axis(
         ax,
         "Logarithmic Cooling Fit",
         "Cooling time (s)",
         r"$\ln(T-T_0)$",
     )
-    Styling._finish_plot(fig, "Cooling_Log_Linear_Fit", report_images_dir)
+    styling._finish_plot(fig, "Cooling_Log_Linear_Fit", report_images_dir)
 
 def plot_heating_rate_comparison(data):
     time_seconds = data["Heating Time"].to_numpy(dtype=float) * 60
@@ -294,13 +294,13 @@ def plot_heating_rate_comparison(data):
     ax_res.axhline(0, color="tab:orange", linestyle="--", label="Zero residual")
     ax_res.legend()
     
-    Styling._style_axis(
+    styling._style_axis(
         ax,
         "Heating with Simultaneous Cooling",
         "Heating time (s)",
         r"Temperature excess, $T-T_0$ ($^\circ$C)",
     )
-    Styling._finish_plot(fig, "Heating_With_Cooling", report_images_dir)
+    styling._finish_plot(fig, "Heating_With_Cooling", report_images_dir)
     
 def plot_adiabatic(data):
     fig, ax = plt.subplots(figsize=figure_size)
@@ -311,8 +311,8 @@ def plot_adiabatic(data):
     x = range(12)
     ax.plot(x, 8*t*x + c, label=f"Fit: t = {t:.2f}s, c = {c:.2f}")
     ax.legend()
-    Styling._style_axis(ax, "Period vs n", "n", f"Period (s/8)")
-    Styling._finish_plot(fig, "Period_vs_n_adiabatic", report_images_dir)
+    styling._style_axis(ax, "Period vs n", "n", f"Period (s/8)")
+    styling._finish_plot(fig, "Period_vs_n_adiabatic", report_images_dir)
 
 if __name__ == "__main__":
     choice = input("Which analysis do you want? (c)ooling, (h)eating, (a)diabatic, (g)amma or (G)raphs: ").strip()
